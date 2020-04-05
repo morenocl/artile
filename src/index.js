@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from './App';
+import rootReducer from './reducers';
 import * as serviceWorker from './serviceWorker';
 
+// eslint-disable-next-line no-underscore-dangle
+const debug = window.__REDUX_DEVTOOLS_EXTENSION__
+// eslint-disable-next-line no-underscore-dangle
+  && window.__REDUX_DEVTOOLS_EXTENSION__({ trace: true });
+const store = createStore(rootReducer, undefined, debug);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+
   document.getElementById('root')
 );
 
