@@ -5,6 +5,7 @@ import { Route, Switch, type ContextRouter } from 'react-router'
 import PropTypes from 'prop-types';
 
 import Catalogo from '../containers/Catalogo';
+import Configuracion from '../containers/Configuracion';
 import Home from '../containers/Home';
 import Info from '../containers/Info';
 import Landing from '../components/Landing';
@@ -31,6 +32,14 @@ export const Routes = ({ auth }) => (
       exact
       render={(props: ContextRouter) => (<>
         <Catalogo type="productos"/>
+      </>)}
+    />
+
+    <Route
+      path="/configuracion"
+      exact
+      render={(props: ContextRouter) => (<>
+        <Configuracion />
       </>)}
     />
 
