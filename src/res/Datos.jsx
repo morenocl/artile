@@ -6,7 +6,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'textil',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'2',
@@ -15,7 +15,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'textil',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'3',
@@ -24,7 +24,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'textil',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'4',
@@ -33,7 +33,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'natural',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'5',
@@ -42,7 +42,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'natural',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'6',
@@ -51,7 +51,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'natural',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'7',
@@ -60,7 +60,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'natural',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'8',
@@ -69,7 +69,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'natural',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'9',
@@ -78,7 +78,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'10',
@@ -87,7 +87,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'11',
@@ -96,7 +96,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'12',
@@ -105,7 +105,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'13',
@@ -114,7 +114,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'14',
@@ -123,7 +123,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'15',
@@ -132,7 +132,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'16',
@@ -141,7 +141,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'17',
@@ -150,7 +150,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'guagua',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'18',
@@ -393,7 +393,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'kutxa',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'52',
@@ -402,7 +402,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'kutxa',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'53',
@@ -411,7 +411,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'kutxa',
-    filtro:'',
+    filtro:'otros',
   },
   {
     id:'54',
@@ -420,7 +420,7 @@ export const productos = [
     button:'Agregar',
     img:'holder.js/100px180',
     categ:'kutxa',
-    filtro:'',
+    filtro:'otros',
   },
 ];
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
@@ -9,15 +9,64 @@ import Tabs from 'react-bootstrap/Tabs'
 import '../res/css/catalogo.css'
 /*  style={{ width: '12rem' }} */
 const Catalogo = (props) => {
-  const { categ, mapeoCard } = props;
+  const { categ } = props;
+
+  const init = {
+    aceites: true,
+    tinturas: true,
+    cremas: true,
+    canastas: true,
+    almoha: true,
+    otros: true,
+  }
+  const [state, setState] = useState(init)
+
+  const botones = (
+    <>
+      <Button variant="primary" onClick={() => {setState(init)}}>
+        todo</Button>{' '}
+      <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites}); console.log(state)}}>
+        Aceites</Button>{' '}
+      <Button variant="success" onClick={() => {setState({...state, tinturas:!state.tinturas}); console.log(state)}}>
+        Tinturas</Button>{' '}
+      <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas}); console.log(state)}}>
+        Cremas</Button>{' '}
+      <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas}); console.log(state)}}>
+        Canastas</Button>{' '}
+      <Button variant="info" onClick={() => {setState({...state, almoha:!state.almoha}); console.log(state)}}>
+        Almohadillas</Button>{' '}
+      <Button variant="dark" onClick={() => {setState({...state, otros:!state.otros})}}>
+        otros</Button>{' '}
+    </>
+  );
 
   const taby = [];
 
   for (const p in categ){
     taby.push(
       <Tab eventKey={categ[p].key} title={categ[p].title} key={p}>
+        {categ[p].key === 'natural' ? botones : undefined}
         <CardDeck>
-          { categ[p].elems.map((dato, i) => {return (mapeoCard(dato, i))}) }
+          { categ[p].elems.map(({title, text, button, img, categ, filtro}, i) => {
+            if (categ !== 'natural' || (categ === 'natural' && state[filtro])){
+              return(
+                <Col xs={4} lg={3} key={i}>
+                  <Card key={i} >
+                    <Card.Img variant="top" src={img} />
+                    <Card.Body>
+                      <Card.Title>{title}</Card.Title>
+                      <Card.Text>
+                        {text}
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small className="text-muted">{button}</small>
+                    </Card.Footer>
+                  </Card>
+                </Col>
+              )
+            }
+          }) }
         </CardDeck>
       </Tab>
     )

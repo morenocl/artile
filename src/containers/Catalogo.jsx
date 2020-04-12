@@ -1,10 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import CardDeck from 'react-bootstrap/CardDeck'
-import Col from 'react-bootstrap/Col'
-import Tab from 'react-bootstrap/Tab'
-import Tabs from 'react-bootstrap/Tabs'
 
 import CatalogoScreen from '../components/Catalogo'
 import OfertasScreen from '../components/Ofertas'
@@ -22,31 +16,13 @@ const Catalogo = (props) => {
 
   productos.forEach(dato => categ[dato.categ].elems.push(dato));
 
-  const mapeoCard = ({title, text, button, img, categ}, i) => {
-    return(
-      <Col xs={4} lg={3} key={i}>
-        <Card key={i} >
-          <Card.Img variant="top" src={img} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Text>
-              {text}
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">{button}</small>
-          </Card.Footer>
-        </Card>
-      </Col>
-    )
-  }
 
 
   return(
     props.type === 'ofertas' ?
       <OfertasScreen data={ofertas}/>
       :
-      <CatalogoScreen categ={categ} mapeoCard={mapeoCard}/>
+      <CatalogoScreen categ={categ} />
   );
 }
 
