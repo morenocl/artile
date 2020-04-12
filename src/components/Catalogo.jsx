@@ -6,8 +6,10 @@ import Col from 'react-bootstrap/Col'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
+import Producto from './Producto'
 import '../res/css/catalogo.css'
 /*  style={{ width: '12rem' }} */
+
 const Catalogo = (props) => {
   const { categ } = props;
 
@@ -20,6 +22,8 @@ const Catalogo = (props) => {
     otros: true,
   }
   const [state, setState] = useState(init)
+
+  const [producto, setProducto] = useState(0);
 
   const botones = (
     <>
@@ -47,22 +51,22 @@ const Catalogo = (props) => {
       <Tab eventKey={categ[p].key} title={categ[p].title} key={p}>
         {categ[p].key === 'natural' ? botones : undefined}
         <CardDeck>
-          { categ[p].elems.map(({title, text, button, img, categ, filtro}, i) => {
+          { categ[p].elems.map(({id, title, text, button, img, categ, filtro}, i) => {
             if (categ !== 'natural' || (categ === 'natural' && state[filtro])){
               return(
                 <Col xs={4} lg={3} key={i}>
-                  <Card key={i} >
-                    <Card.Img variant="top" src={img} />
-                    <Card.Body>
-                      <Card.Title>{title}</Card.Title>
-                      <Card.Text>
-                        {text}
-                      </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small className="text-muted">{button}</small>
-                    </Card.Footer>
-                  </Card>
+                    <Card key={i}>
+                      <Card.Img variant="top" src={img}  tag='a' onClick={()=>{setProducto(id)}}/>
+                      <Card.Body tag='a' onClick={()=>{setProducto(id)}}>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>
+                          {text}
+                        </Card.Text>
+                      </Card.Body>
+                      <Card.Footer tag='a' onClick={()=>{console.log("comprado")}}>
+                        <small className="text-muted">{button}</small>
+                      </Card.Footer>
+                    </Card>
                 </Col>
               )
             }
@@ -81,6 +85,11 @@ const Catalogo = (props) => {
   return(<>
     <h1>Catalogo</h1>
     {tab}
+    <Producto
+      id={producto}
+      show={producto!==0}
+      onHide={() => setProducto(0)}
+    />
     </>
   )
 }
