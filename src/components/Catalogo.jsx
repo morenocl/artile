@@ -23,7 +23,14 @@ const Catalogo = (props) => {
   }
   const [state, setState] = useState(init)
 
-  const [producto, setProducto] = useState(0);
+  const [id, setId] = useState(0);
+  // Si si clickea sobre un producto, lo busca y prepara para ver.
+  const prod = () => {
+    for (var tag in categ){
+      const p = categ[tag].elems.find(e => e.id===id);
+      if(p) return(p); else console.log("Si Modal esta renderizado -> el id de producto es invalido.");
+    }
+  };
 
   const botones = (
     <>
@@ -56,8 +63,8 @@ const Catalogo = (props) => {
               return(
                 <Col xs={4} lg={3} key={i}>
                     <Card key={i}>
-                      <Card.Img variant="top" src={img}  tag='a' onClick={()=>{setProducto(id)}}/>
-                      <Card.Body tag='a' onClick={()=>{setProducto(id)}}>
+                      <Card.Img variant="top" src='holder.js/100px180'  tag='a' onClick={()=>{setId(id)}}/>
+                      <Card.Body tag='a' onClick={()=>{setId(id)}}>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
                           {text}
@@ -86,9 +93,10 @@ const Catalogo = (props) => {
     <h1>Catalogo</h1>
     {tab}
     <Producto
-      id={producto}
-      show={producto!==0}
-      onHide={() => setProducto(0)}
+      prod={prod}
+      id={id}
+      show={id!==0}
+      onHide={() => setId(0)}
     />
     </>
   )
