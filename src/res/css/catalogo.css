@@ -34,13 +34,8 @@
 
 
 
-.card-deck {
-   margin: 0 0px;
-}
-.card-deck .card {
-  margin: 0 0 1rem;
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
+
+@media (max-width: 767.98px) {
   .card-deck .card {
     -ms-flex: 0 0 48.7%;
     flex: 0 0 48.7%;

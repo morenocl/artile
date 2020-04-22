@@ -13,10 +13,10 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Row>
-        <Col xs="auto" sm="auto" md="auto" lg="auto">
+        <Col xs={12} sm={3} md={2} lg={1}>
           <NavCol />
         </Col>
-        <Col>
+        <Col xs={12} sm={9} md={10} lg={11}>
           <Main />
         </Col>
       </Row>

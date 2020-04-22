@@ -1,18 +1,27 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export const NavCol = () => {
 
 return (
-  <Nav variant="pills" className="flex-column">
-    <Nav.Link href="/">Inicio</Nav.Link>
-    <Nav.Link href="/ofertas">Ofertas</Nav.Link>
-    <Nav.Link href="/catalogo">Catalogo</Nav.Link>
-    <Nav.Link href="/nosotros">Nosotros</Nav.Link>
-    <Nav.Link href="/politicas">Politicas</Nav.Link>
-    <Nav.Link href="/envios">Envios</Nav.Link>
-    <Nav.Link href="/contacto">Contacto</Nav.Link>
-  </Nav>
+  <Row justify='true'>
+    <Col xs={12}>
+    <Nav variant="pills" className="justify-content-center" >
+      <Nav.Link xs={4} href="/ofertas"><h4>Ofertas</h4></Nav.Link>
+      <Nav.Link xs={4} href="/catalogo"><h4>Catalogo</h4></Nav.Link>
+      <Nav.Link xs={4} href="/nosotros"><h4>Nosotros</h4></Nav.Link>
+    </Nav>
+    </Col>
+    <Col xs={12}>
+    <Nav variant="pills" className="justify-content-center" >
+      <Nav.Link href="/politicas"><h4>Politicas</h4></Nav.Link>
+      <Nav.Link href="/envios"><h4>Envios</h4></Nav.Link>
+      <Nav.Link href="/contacto"><h4>Contacto</h4></Nav.Link>
+    </Nav>
+    </Col>
+  </Row>
 );}
 
 export default NavCol;

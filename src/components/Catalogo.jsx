@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
@@ -33,35 +34,39 @@ const Catalogo = (props) => {
   };
 
   const botones = (
-    <>
-      <Button variant="primary" onClick={() => {setState(init)}}>
-        todo</Button>{' '}
-      <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites}); console.log(state)}}>
-        Aceites</Button>{' '}
-      <Button variant="success" onClick={() => {setState({...state, tinturas:!state.tinturas}); console.log(state)}}>
-        Tinturas</Button>{' '}
-      <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas}); console.log(state)}}>
-        Cremas</Button>{' '}
-      <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas}); console.log(state)}}>
-        Canastas</Button>{' '}
-      <Button variant="info" onClick={() => {setState({...state, almoha:!state.almoha}); console.log(state)}}>
-        Almohadillas</Button>{' '}
-      <Button variant="dark" onClick={() => {setState({...state, otros:!state.otros})}}>
-        otros</Button>{' '}
-    </>
+    <Row className="show-grid" float="center">
+      <Col xs={12} md='auto'>
+        <Button variant="primary" onClick={() => {setState(init)}}>
+          todo</Button>{' '}
+        <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites}); console.log(state)}}>
+          Aceites</Button>{' '}
+        <Button variant="success" onClick={() => {setState({...state, tinturas:!state.tinturas}); console.log(state)}}>
+          Tinturas</Button>{' '}
+        <Button variant="dark" onClick={() => {setState({...state, otros:!state.otros})}}>
+          otros</Button>{' '}
+      </Col>
+      <Col xs={12} md='auto'>
+        <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas}); console.log(state)}}>
+          Cremas</Button>{' '}
+        <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas}); console.log(state)}}>
+          Canastas</Button>{' '}
+        <Button variant="info" onClick={() => {setState({...state, almoha:!state.almoha}); console.log(state)}}>
+          Almohadillas</Button>{' '}
+      </Col>
+    </Row>
   );
 
   const taby = [];
 
   for (const p in categ){
     taby.push(
-      <Tab eventKey={categ[p].key} title={categ[p].title} key={p}>
+      <Tab xs={6} eventKey={categ[p].key} title={categ[p].title} key={p}>
         {categ[p].key === 'natural' ? botones : undefined}
         <CardDeck>
           { categ[p].elems.map(({id, title, text, button, img, categ, filtro}, i) => {
             if (categ !== 'natural' || (categ === 'natural' && state[filtro])){
               return(
-                <Col xs={4} lg={3} key={i}>
+                <Col xs={11} sm={11} md={4} lg={3} key={i}>
                     <Card key={i}>
                       <Card.Img variant="top" src='holder.js/100px180'  tag='a' onClick={()=>{setId(id)}}/>
                       <Card.Body tag='a' onClick={()=>{setId(id)}}>
