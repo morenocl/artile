@@ -28,7 +28,6 @@ const reducer = (state = initialState, action = {}) => {
 
   switch (type) {
     case SET_PROD:{
-      console.log("state: "+Object.keys(state));
       let index = state.productos.findIndex(x => x.id === payload.id);
       // Is the item user wants to add already in the cart?
       if (index !== -1) {
@@ -43,10 +42,10 @@ const reducer = (state = initialState, action = {}) => {
       // No, add a new item.
       return { ...state, productos: [...state.productos, payload] };
     }
-//      return { ...state, productos: [...state.productos, payload]};
+
     case REMOVE_PROD:
-      console.log("lenght: "+state.productos.length);
-      return { ...state, productos: state.productos.filter(x => x.id !== action.payload)};
+      return { ...state, productos: state.productos.filter(x => x.id !== action.payload.id)};
+
     case UPDATE_PROD_QUANTITY: {
       let index = state.productos.findIndex(x => x.id === action.payload.id);
       // User wants to update quantity of existing item.
@@ -62,6 +61,7 @@ const reducer = (state = initialState, action = {}) => {
       // If we couldn't find such item, do nothing.
       return state;
     }
+
     default:
       console.log('duck en default.')
       return state;
