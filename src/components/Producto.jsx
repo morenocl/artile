@@ -10,8 +10,7 @@ import Row from 'react-bootstrap/Row'
 
 
 const Producto = (props) => {
-  const { id, show, onHide, prod } = props;
-  const price = '100';
+  const { id, show, onHide, prod, agregar } = props;
   const vacio = {
     id:'',
     title:'',
@@ -20,6 +19,7 @@ const Producto = (props) => {
     img:'',
     categ:'',
     filtro:'',
+    precio:'',
   }
   const e = prod();
   const item = e ? e : vacio;
@@ -36,7 +36,7 @@ const Producto = (props) => {
         <Modal.Title id="contained-modal-title-vcenter">
           <Row>
           {item.title}
-          <h2><Badge variant="success" align='right'>$ {price}</Badge></h2>
+          <h2><Badge variant="success" align='right'>$ {item.precio}</Badge></h2>
           </Row>
         </Modal.Title>
       </Modal.Header>
@@ -55,8 +55,8 @@ const Producto = (props) => {
           </Row>
         </Container>
       </Modal.Body>
-      <Modal.Footer class='modal-footer justify-content-between'>
-        <Button variant="success" align='left'>$ {price}</Button>
+      <Modal.Footer className='modal-footer justify-content-between'>
+        <Button onClick={()=>{agregar({...item, cantidad:1})}} variant="success" align='left'>$ {item.precio}</Button>
         <Button onClick={props.onHide} data-dismiss="modal">Agregar</Button>
       </Modal.Footer>
     </Modal>

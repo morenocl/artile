@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
@@ -9,10 +10,15 @@ import Tabs from 'react-bootstrap/Tabs'
 
 import Producto from './Producto'
 import '../res/css/catalogo.css'
+import {dispatchProd} from '../containers/Cart.ducks'
 /*  style={{ width: '12rem' }} */
 
+export const mapDispatchToProps = ({
+  setProd: dispatchProd,
+});
+
 const Catalogo = (props) => {
-  const { categ } = props;
+  const { categ, setProd } = props;
 
   const init = {
     aceites: true,
@@ -72,7 +78,7 @@ const Catalogo = (props) => {
                       <Card.Body tag='a' onClick={()=>{setId(id)}}>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
-                          {text}
+                          {text.length > 100 ? text.substring(0, 100) + '...' : text}
                         </Card.Text>
                       </Card.Body>
                       <Card.Footer tag='a' onClick={()=>{console.log("comprado")}}>
@@ -99,6 +105,7 @@ const Catalogo = (props) => {
     {tab}
     <Producto
       prod={prod}
+      agregar={setProd}
       id={id}
       show={id!==0}
       onHide={() => setId(0)}
@@ -107,4 +114,4 @@ const Catalogo = (props) => {
   )
 }
 
-export default Catalogo
+export default connect(null, mapDispatchToProps)(Catalogo)

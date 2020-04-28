@@ -7,9 +7,9 @@ import '../res/css/pie.css'
 const Pie = (props) => {
   const { data } = props;
 
-  const contacto = data.map(({nombre, link, img}) => {
+  const contacto = data.map(({nombre, link, img}, i) => {
     return (
-      <a target="_blank" href={link}><img src={img} /> {nombre}  </a>
+      <a key={i} target="_blank" href={link}><img src={img} /> {nombre}  </a>
     )
   });
 

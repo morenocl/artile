@@ -21,6 +21,14 @@ const NavBar = ({ auth, logout }) => {
     </LinkContainer>
   );
 
+  const cart = (
+    <LinkContainer to="/compra">
+      <Button onClick={()=>{}}>
+        Chango
+      </Button>
+    </LinkContainer>
+  );
+
   const logoutButton = (
     <LinkContainer to="/">
       <Button onClick={() => {logout(!auth);}}>
@@ -38,6 +46,7 @@ const NavBar = ({ auth, logout }) => {
       <Navbar.Collapse className="justify-content-end">
         <Nav>
           {config}
+          {cart}
           {auth ? logoutButton : ingresar}
         </Nav>
       </Navbar.Collapse>
