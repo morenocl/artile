@@ -1,6 +1,7 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import { SocialIcon } from 'react-social-icons';
 
 import '../res/css/pie.css'
 
@@ -9,7 +10,10 @@ const Pie = (props) => {
 
   const contacto = data.map(({nombre, link, img}, i) => {
     return (
-      <a key={i} target="_blank" href={link}><img src={img} /> {nombre}  </a>
+      <a target="_blank" href={link}>
+        <SocialIcon url={link} style={{ height: 20, width: 20 }}/>
+        {' '}{nombre}{'  '}
+      </a>
     )
   });
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { SocialIcon } from 'react-social-icons';
 
 
 const Contacto = (props) => {
@@ -7,7 +8,10 @@ const Contacto = (props) => {
   const contacto = data.map(({nombre, link, img}) => {
     return (
       <h3>
-        <a target="_blank" href={link}><img src={img} /> {nombre}</a>
+        <a target="_blank" href={link}>
+          <SocialIcon url={link} style={{ height: 42, width: 42 }}/>
+          {' '}{nombre}
+        </a>
       </h3>
     )
   });

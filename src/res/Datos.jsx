@@ -676,7 +676,7 @@ export const banner = [
 export const contacto = [
   {
     nombre:'E-mail',
-    link:'http://www.mail.google.com',
+    link:'http://mail.google.com',
     img:'holder.js/20x20',
   },
   {
