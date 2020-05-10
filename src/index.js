@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 const debug = window.__REDUX_DEVTOOLS_EXTENSION__
 // eslint-disable-next-line no-underscore-dangle
   && window.__REDUX_DEVTOOLS_EXTENSION__({ trace: true });
-const store = createStore(rootReducer, undefined, debug);
+export const store = createStore(rootReducer, undefined, debug);
 
 ReactDOM.render(
   <Provider store={store}>

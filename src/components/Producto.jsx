@@ -1,13 +1,15 @@
 import React from 'react'
+import {useState} from 'react'
 
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
+import {LinkContainer} from 'react-router-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Modal from 'react-bootstrap/Modal'
 import Row from 'react-bootstrap/Row'
-
+import {store} from '../index'
 
 const Producto = (props) => {
   const { id, show, onHide, prod, agregar } = props;
@@ -23,6 +25,20 @@ const Producto = (props) => {
   }
   const e = prod();
   const item = e ? e : vacio;
+  const [toCarrito, setToCarrito] = useState(-1 !== store.getState().Cart.productos.findIndex(x => x.id === item.id))
+
+  const botonCarrito = (
+      <LinkContainer to="/compra"><Button>Ir a carrito</Button></LinkContainer>
+    )
+  const boton = (
+    <Button
+      onClick={()=>{
+        agregar({...item, cantidad:1}); setToCarrito(true)
+      }}
+      variant="success" align='left'>
+      $ {item.precio}
+    </Button>
+  )
 
   return (
       <Modal
@@ -56,7 +72,7 @@ const Producto = (props) => {
         </Container>
       </Modal.Body>
       <Modal.Footer className='modal-footer justify-content-between'>
-        <Button onClick={()=>{agregar({...item, cantidad:1})}} variant="success" align='left'>$ {item.precio}</Button>
+        {boton} {toCarrito ? botonCarrito : null}
         <Button onClick={props.onHide} data-dismiss="modal">Agregar</Button>
       </Modal.Footer>
     </Modal>
