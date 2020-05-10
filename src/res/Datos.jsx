@@ -696,5 +696,21 @@ export const contacto = [
   },
 ];
 
+export const mediosDePago = {
+  banco: {
+    banco: 'banco fulano',
+    titular: 'Apellido, nombre',
+    cuenta: '1234567890123',
+    alias: 'alia.s.cbu',
+    cbu: '1234567890123456789012',
+    tipo: 'caja de ahorro',
+  },
+  uala: {
+    titular: 'Apellido, nombre',
+    alias: 'alias.uala',
+    cbu: '1234567890123456789012',
+  },
+};
+
 export const datosEnvio = [
 ];
