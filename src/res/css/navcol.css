@@ -1,0 +1,21 @@
+.button-navcol {
+  width: 25%;
+}
+
+@media (min-width: 48em) {
+  .button-navcol {
+    width: 100%;
+  }
+}
+
+@media (min-width: 62em) {
+  .button-navcol {
+    width: 100%;
+  }
+}
+
+@media (min-width: 75em) {
+  .button-navcol {
+    width: 100%;
+  }
+}

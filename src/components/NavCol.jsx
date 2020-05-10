@@ -5,22 +5,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { LinkContainer } from 'react-router-bootstrap';
 
+import '../res/css/navcol.css'
+
 export const NavCol = () => {
 
 return (
   <Row justify='true'>
     <Col xs={12}>
     <Nav variant="pills" className="justify-content-center" >
-      <LinkContainer xs={4} to="/ofertas"><Button block>Ofertas</Button></LinkContainer>
-      <LinkContainer xs={4} to="/catalogo"><Button block>Catalogo</Button></LinkContainer>
-      <LinkContainer xs={4} to="/nosotros"><Button block>Nosotros</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/ofertas"><Button  className='button-navcol'>Ofertas</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/catalogo"><Button className='button-navcol'>Catalogo</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/nosotros"><Button className='button-navcol'>Nosotros</Button></LinkContainer>
     </Nav>
     </Col>
     <Col xs={12}>
     <Nav variant="pills" className="justify-content-center" >
-      <LinkContainer to="/politicas"><Button block>Politicas</Button></LinkContainer>
-      <LinkContainer to="/envios"><Button block>Envios</Button></LinkContainer>
-      <LinkContainer to="/contacto"><Button block>Contacto</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/politicas"><Button className='button-navcol'>Politicas</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/envios"><Button className='button-navcol'>Envios</Button></LinkContainer>
+      <LinkContainer xs={4} md={12} to="/contacto"><Button className='button-navcol'>Contacto</Button></LinkContainer>
     </Nav>
     </Col>
   </Row>
