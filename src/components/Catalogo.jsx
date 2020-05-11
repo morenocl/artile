@@ -74,7 +74,7 @@ const Catalogo = (props) => {
               return(
                 <Col xs={12} sm={12} md={4} lg={3} key={i} style={{'padding-left': '0px','padding-right': '0px', 'margin-bottom': '10px', 'margin-top': '10px',}}>
                     <Card key={i}>
-                      <Card.Img variant="top" src='holder.js/100px180'  tag='a' onClick={()=>{setId(id)}}/>
+                      <Card.Img variant="top" src={img[0]}  tag='a' onClick={()=>{setId(id)}}/>
                       <Card.Body tag='a' onClick={()=>{setId(id)}}>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>

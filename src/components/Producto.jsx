@@ -30,11 +30,12 @@ const Producto = (props) => {
   const botonCarrito = (
       <LinkContainer to="/compra"><Button>Ir a carrito</Button></LinkContainer>
     )
+  const agregarACarrito = ()=>{
+    agregar({...item, cantidad:1}); setToCarrito(true)
+  }
   const boton = (
     <Button
-      onClick={()=>{
-        agregar({...item, cantidad:1}); setToCarrito(true)
-      }}
+      onClick={agregarACarrito}
       variant="success" align='left'>
       $ {item.precio}
     </Button>
@@ -51,7 +52,9 @@ const Producto = (props) => {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           <Row>
-          {item.title}
+            <p>
+              {item.title}
+            </p>
           <h2><Badge variant="success" align='right'>$ {item.precio}</Badge></h2>
           </Row>
         </Modal.Title>
@@ -60,10 +63,10 @@ const Producto = (props) => {
         <Container>
           <Row>
             <Col xs={6} md={4}>
-              <Image src='holder.js/100px180' thumbnail />
+              <Image src={item.img[0]} thumbnail />
             </Col>
             <Col xs={6} md={4}>
-              <Image src='holder.js/100px180' thumbnail />
+              <Image src={item.img[1]} thumbnail />
             </Col>
             <Col xs={6} md={4}>
               <p>{item.text}</p>
@@ -73,7 +76,7 @@ const Producto = (props) => {
       </Modal.Body>
       <Modal.Footer className='modal-footer justify-content-between'>
         {boton} {toCarrito ? botonCarrito : null}
-        <Button onClick={props.onHide} data-dismiss="modal">Agregar</Button>
+        <Button onClick={agregarACarrito} data-dismiss="modal">Agregar</Button>
       </Modal.Footer>
     </Modal>
   );
