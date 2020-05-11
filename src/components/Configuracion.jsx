@@ -1,8 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
-import { postProducto } from '../res/Api'
-
 
 const  Configuracion = () => {
   const { register, handleSubmit, errors } = useForm(); // initialise the hook

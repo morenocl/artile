@@ -2,7 +2,6 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 
 const Envio = (props) => {
-  const { data } = props;
   return(
     <Modal.Dialog size='lg'>
       <Modal.Header>
