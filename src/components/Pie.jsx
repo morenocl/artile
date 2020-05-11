@@ -10,18 +10,21 @@ const Pie = (props) => {
 
   const contacto = data.map(({nombre, link, img}, i) => {
     return (
-      <a class='link' target="_blank" href={link}>
-        <SocialIcon url={link} bgColor='#f2f2f2' style={{ height: 25, width: 25 }}/>
-        {' '}{nombre}{'  '}
-      </a>
+      <Col xs='auto'>
+        <a class='link' target="_blank" href={link}>
+          <SocialIcon url={link} bgColor='#f2f2f2' style={{ height: 25, width: 25 }}/>
+          {' '}{nombre}{'  '}
+        </a>
+      </Col>
     )
   });
 
   return (
     <footer>
       <Row style={{'margin-right': '0px',}}>
-        <Col xs={10}>
-          {contacto}
+        {contacto}
+        <Col>
+          <div class="float-right">©Artile 2020</div>
         </Col>
       </Row>
     </footer>
