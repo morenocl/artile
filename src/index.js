@@ -7,13 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 import rootReducer from './reducers';
+import { loadState, saveState } from './res/utils'
 import * as serviceWorker from './serviceWorker';
 
 // eslint-disable-next-line no-underscore-dangle
 const debug = window.__REDUX_DEVTOOLS_EXTENSION__
 // eslint-disable-next-line no-underscore-dangle
   && window.__REDUX_DEVTOOLS_EXTENSION__({ trace: true });
-export const store = createStore(rootReducer, undefined, debug);
+
+const initialState = loadState() || {};
+export const store = createStore(rootReducer, initialState, debug);
+store.subscribe(() => {
+  saveState(store.getState())
+});
 
 ReactDOM.render(
   <Provider store={store}>

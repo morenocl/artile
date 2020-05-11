@@ -41,7 +41,7 @@ const Catalogo = (props) => {
 
   const botones = (
     <Row className="show-grid" float="center">
-      <Col xs={12} md='auto'>
+      <Col xs={12} md='auto' style={{'padding-right': '2px'}}>
         <Button variant="primary" onClick={() => {setState(init)}}>
           todo</Button>{' '}
         <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites}); console.log(state)}}>
@@ -51,7 +51,7 @@ const Catalogo = (props) => {
         <Button variant="dark" onClick={() => {setState({...state, otros:!state.otros})}}>
           otros</Button>{' '}
       </Col>
-      <Col xs={12} md='auto'>
+      <Col xs={12} md='auto' style={{'padding-left': '2px'}}>
         <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas}); console.log(state)}}>
           Cremas</Button>{' '}
         <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas}); console.log(state)}}>
@@ -72,7 +72,7 @@ const Catalogo = (props) => {
           { categ[p].elems.map(({id, title, text, button, img, categ, filtro}, i) => {
             if (categ !== 'natural' || (categ === 'natural' && state[filtro])){
               return(
-                <Col xs={11} sm={11} md={4} lg={3} key={i}>
+                <Col xs={12} sm={12} md={4} lg={3} key={i} style={{'padding-left': '0px','padding-right': '0px', 'margin-bottom': '10px', 'margin-top': '10px',}}>
                     <Card key={i}>
                       <Card.Img variant="top" src='holder.js/100px180'  tag='a' onClick={()=>{setId(id)}}/>
                       <Card.Body tag='a' onClick={()=>{setId(id)}}>
@@ -81,9 +81,6 @@ const Catalogo = (props) => {
                           {text.length > 100 ? text.substring(0, 100) + '...' : text}
                         </Card.Text>
                       </Card.Body>
-                      <Card.Footer tag='a' onClick={()=>{console.log("comprado")}}>
-                        <small className="text-muted">{button}</small>
-                      </Card.Footer>
                     </Card>
                 </Col>
               )
