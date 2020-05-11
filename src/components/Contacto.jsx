@@ -8,7 +8,7 @@ const Contacto = (props) => {
   const contacto = data.map(({nombre, link, img}) => {
     return (
       <h3>
-        <a target="_blank" href={link}>
+        <a class='link' target="_blank" href={link}>
           <SocialIcon url={link} style={{ height: 42, width: 42 }}/>
           {' '}{nombre}
         </a>

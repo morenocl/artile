@@ -63,25 +63,26 @@ const Chango = (props) => {
         {props.productos.map((p, i) => {
           total += p.cantidad*p.precio;
           return(
-            <ListGroup.Item key={i}>
+            <ListGroup.Item key={i} id='item-lista-chango'>
+              <Button key={'restar'} variant="outline-primary"
+                onClick={()=>{update({id: p.id, cantidad: -1,})}}>-1
+              </Button>
+              <Button key={'agregar'} variant="outline-primary"
+                onClick={()=>{update({id: p.id, cantidad: +1,})}}>+1
+              </Button>
+              <Button key={'eliminar'} variant="outline-primary"
+                onClick={()=>{remove({id: p.id,})}}>🗑
+              </Button>
+              {' '}
               {p.title + ': '}
               {p.cantidad + ' * '}
               {'$' + p.precio + ' => '}
               {'$' + p.cantidad*p.precio}
-              <Button key={'restar'}
-                onClick={()=>{update({id: p.id, cantidad: -1,})}}>-1
-              </Button>
-              <Button key={'agregar'}
-                onClick={()=>{update({id: p.id, cantidad: +1,})}}>+1
-              </Button>
-              <Button key={'eliminar'}
-                onClick={()=>{remove({id: p.id,})}}>🗑
-              </Button>
             </ListGroup.Item>
           )
         })}
         {total ?
-          <ListGroup.Item variant="success" action onClick={()=>{setPagos(!pagos)}}>
+          <ListGroup.Item variant="success" action onClick={()=>{setPagos(!pagos)}} id='total-lista-chango'>
             Total: ${total}
             <Button onClick={()=>{setPagos(!pagos)}}>Medios de Pago</Button>
           </ListGroup.Item>

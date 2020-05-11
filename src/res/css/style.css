@@ -1,3 +1,70 @@
+:root {
+  --azul1: #078ca9;
+  --azul2: #53d1ec;
+  --gris: #f2f2f2;
+  --verde1: #c5df16;
+  --verde2: #ddf156;
+}
+
 #page-container{
   min-height: calc(100vh - 56px);    /* Footer height */
+  margin-bottom: 15px;
+}
+
+/* botones de NavCol */
+a.button-navcol.btn.btn-primary {
+  background: var(--azul2);
+  border-color: var(--azul2);
+}
+a.button-navcol.active.btn.btn-primary {
+  background: var(--azul1);
+  border-color: var(--azul1);
+}
+
+/* botones de NavBar */
+a.btn.btn-primary {
+  background: var(--azul2);
+  border-color: var(--azul2);
+}
+a.active.btn.btn-primary {
+  background: var(--azul1);
+  border-color: var(--azul1);
+}
+
+/* color link pie de pagina y Contacto*/
+.link { color: #000000; }
+.link:hover { color: #111111; }
+
+.card {
+  background-color: var(--verde1);
+}
+
+body {
+  background-color: var(--gris);
+}
+
+footer {
+  padding-top: 10px;
+  background-color: var(--azul1);
+}
+
+/* precio al ver el producto */
+span.badge-sucess {
+  background-color: var(--azul1);
+}
+buttom.btn.btn-primary {
+  background: var(--azul1);
+  border-color: var(--azul1);
+}
+
+
+/* Chango */
+#item-lista-chango {
+  background-color: var(--verde2);
+}
+#total-lista-chango {
+  background-color: var(--verde1);
+}
+div.list-group {
+  margin-bottom: 20px;
 }
