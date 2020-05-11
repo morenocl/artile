@@ -10,12 +10,14 @@ import Pie from './containers/Pie';
 
 import './res/css/style.css'
 
+/*  style={{'padding-right': '0px',}} */
+
 const App = () => {
   return(
     <>
       <div className="App" id='page-container'>
         <NavBar />
-        <Row>
+        <Row style={{'margin-right': '0px',}}>
           <Col xs={12} sm={3} md={2} lg={1}>
             <NavCol />
           </Col>
