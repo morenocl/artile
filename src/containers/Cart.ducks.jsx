@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const SET_PROD = 'SET_PROD';
 const REMOVE_PROD = 'REMOVE_PROD';
 const UPDATE_PROD_QUANTITY = 'UPDATE_PROD_QUANTITY'

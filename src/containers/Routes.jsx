@@ -9,7 +9,6 @@ import Chango from '../containers/Chango';
 import Configuracion from '../containers/Configuracion';
 import Home from '../containers/Home';
 import Info from '../containers/Info';
-import Landing from '../components/Landing';
 import Error from '../components/Error';
 
 

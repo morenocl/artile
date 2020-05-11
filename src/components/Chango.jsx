@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
 import {LinkContainer} from 'react-router-bootstrap'
 import {mediosDePago} from '../res/Datos'
 

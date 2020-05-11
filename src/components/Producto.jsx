@@ -12,7 +12,7 @@ import Row from 'react-bootstrap/Row'
 import {store} from '../index'
 
 const Producto = (props) => {
-  const { id, show, onHide, prod, agregar } = props;
+  const { show, onHide, prod, agregar } = props;
   const vacio = {
     id:'',
     title:'',
