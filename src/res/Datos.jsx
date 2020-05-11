@@ -694,6 +694,11 @@ export const contacto = [
     link:'http://www.twitter.com',
     img:'holder.js/20x20',
   },
+  {
+    nombre:'Whatsapp',
+    link:'https://api.whatsapp.com/send?phone=543544609044&text=Hola!%20Me%20interesa%20realizar%20una%20compra',
+    img:'holder.js/20x20',
+  },
 ];
 
 export const mediosDePago = {
