@@ -617,39 +617,50 @@ export const productos = [
     img:['img/img5.png', 'img/img6.png'],
     categ:'kutxa',
     filtro:'otros',
+    precio: '100',
 },
 ];
 
 export const ofertas = [
 {
+  id: '99',
   title: "Oferta 1",
   text: "Descripcion y contenido de la oferta ",
   button: "Agregar",
-  img:'holder.js/100px180',
-  },
+  img:'img/img1.png',
+  precio: '100',
+},
 {
+  id: '98',
   title: "Oferta 2",
   text: "Descripcion y contenido de la oferta 2",
   button: "Comprar",
-  img:'holder.js/100px180',
+  img:'img/img2.png',
+  precio: '100',
   },
 {
+  id: '97',
   title: "Oferta 3",
   text: "Descripcion y contenido de la oferta 3",
   button: "Se acaba!",
-  img:'holder.js/100px180',
+  img:'img/img3.png',
+  precio: '100',
 },
 {
+  id:'96',
   title: "Oferta 4",
   text: "Descripcion y contenido de la oferta 4",
   button: "Ultima unidad",
-  img:'holder.js/100px180',
+  img:'img/img4.png',
+  precio: '100',
 },
 {
+  id: '95',
   title: "Oferta 5",
   text: "Descripcion y contenido de la oferta 5",
   button: "Llevatelo!",
-  img:'holder.js/100px180',
+  img:'img/img5.png',
+  precio: '100',
 },
 ];
 

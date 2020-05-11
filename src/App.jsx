@@ -17,7 +17,7 @@ const App = () => {
     <>
       <div className="App" id='page-container'>
         <NavBar />
-        <Row style={{'margin-right': '0px',}}>
+        <Row style={{'marginRight': '0px',}}>
           <Col xs={12} sm={3} md={2} lg={1}>
             <NavCol />
           </Col>

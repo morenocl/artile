@@ -1,11 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import Button from 'react-bootstrap/Button'
 import CatalogoScreen from '../components/Catalogo'
 import OfertasScreen from '../components/Ofertas'
 import { productos, ofertas } from '../res/Datos'
+import {dispatchProd} from '../containers/Cart.ducks'
 
+
+export const mapDispatchToProps = ({
+  setProd: dispatchProd,
+});
 
 const Catalogo = (props) => {
+  const { setProd } = props;
 
   const categ = {
     guagua:{title:"Artile Guagua", key:"guagua" , elems:[],},
@@ -16,14 +24,18 @@ const Catalogo = (props) => {
 
   productos.forEach(dato => categ[dato.categ].elems.push(dato));
 
-
-
   return(
     props.type === 'ofertas' ?
-      <OfertasScreen data={ofertas}/>
+      <OfertasScreen
+        data={ofertas}
+        agregar={setProd}
+      />
       :
-      <CatalogoScreen categ={categ} />
+      <CatalogoScreen
+        categ={categ}
+        setProd={setProd}
+      />
   );
 }
 
-export default Catalogo;
+export default connect(null, mapDispatchToProps)(Catalogo)

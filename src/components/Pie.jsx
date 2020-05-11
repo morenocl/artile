@@ -10,7 +10,7 @@ const Pie = (props) => {
 
   const contacto = data.map(({nombre, link, img}, i) => {
     return (
-      <Col xs='auto'>
+      <Col xs='auto' key={nombre}>
         <a class='link' target="_blank" href={link}>
           <SocialIcon url={link} bgColor='#f2f2f2' style={{ height: 25, width: 25 }}/>
           {' '}{nombre}{'  '}

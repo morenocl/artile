@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
@@ -10,12 +9,7 @@ import Tabs from 'react-bootstrap/Tabs'
 
 import Producto from './Producto'
 import '../res/css/catalogo.css'
-import {dispatchProd} from '../containers/Cart.ducks'
-/*  style={{ width: '12rem' }} */
 
-export const mapDispatchToProps = ({
-  setProd: dispatchProd,
-});
 
 const Catalogo = (props) => {
   const { categ, setProd } = props;
@@ -111,4 +105,5 @@ const Catalogo = (props) => {
   )
 }
 
-export default connect(null, mapDispatchToProps)(Catalogo)
+
+export default Catalogo;
