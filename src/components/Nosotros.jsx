@@ -6,7 +6,7 @@ const Nosotros = () => {
   return(
     <>
       <h1>Sobre nosotros</h1>
-      <Row>
+      <Row style={{'margin-left': '0px','margin-right': '0px',}}>
         <Modal.Dialog md={6}>
           <Modal.Header>
             <Modal.Title>

@@ -45,9 +45,9 @@ const NavBar = ({ auth, logout }) => {
 
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          {config}
+          {/*config*/}
           {cart}
-          {auth ? logoutButton : ingresar}
+          {/*auth ? logoutButton : ingresar*/}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

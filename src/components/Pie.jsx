@@ -19,12 +19,9 @@ const Pie = (props) => {
 
   return (
     <footer>
-      <Row>
+      <Row style={{'margin-right': '0px',}}>
         <Col xs={10}>
           {contacto}
-        </Col>
-        <Col xs={2}>
-          <p align='right'>©Artile 2020  </p>
         </Col>
       </Row>
     </footer>
