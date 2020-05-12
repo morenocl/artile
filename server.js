@@ -11,6 +11,16 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
+app.configure(function(){
+  app.use(express.static(__dirname+'/public')); // Catch static files
+  app.use(function(req, res, next) {
+    if (req.url == '/view') {
+      next();
+    } else {
+      res.redirect('/index.html');
+    }
+  });
+});
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
