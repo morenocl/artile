@@ -10,7 +10,7 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {mediosDePago} from '../res/Datos'
 
 const Chango = (props) => {
-  const {update, remove} = props;
+  const {update, remove, enviarPedido} = props;
   const [pagos, setPagos] = useState(false);
 
   const showPago = () => {
@@ -39,6 +39,17 @@ const Chango = (props) => {
                 Nº CBU: {mediosDePago.uala.cbu}<br/>
               </Card.Text>
             </Card.Body>
+          </Card>
+          <Card>
+            <Card.Header>Informa tu pago!</Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  Envianos un Whatsapp asi ya reservamos tu pedido.
+                  <br/>
+                  Una vez hecho el pago nos envias el cupon de pago y te enviamos tu producto!
+                </Card.Text>
+                <Button onClick={enviarPedido}>Enviar</Button>
+              </Card.Body>
           </Card>
         </CardDeck>
       : null

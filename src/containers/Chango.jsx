@@ -17,11 +17,23 @@ export const mapDispatchToProps = ({
 const Chango = (props) => {
   const {productos, updateProd, removeProd} = props;
 
+  const enviarPedido = () => {
+    let msj = 'Hola! Quiero hacer una compra:'
+    productos.forEach((p, i) => {
+      msj = msj + ' ' + p.cantidad + ' ' + p.title
+      msj += i +1 < productos.length ? ',' : ''
+    });
+    msj += '.'
+    let link = 'https://api.whatsapp.com/send?phone=543544609044&text=' + msj.replace(/\s+/g,'%20')
+    window.open(link)
+  }
+
   return (
     <ChangoScreen
       productos={productos}
       update={updateProd}
       remove={removeProd}
+      enviarPedido={enviarPedido}
     />
   )
 }
