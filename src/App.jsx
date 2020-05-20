@@ -13,18 +13,21 @@ import './res/css/style.css'
 /*  style={{'padding-right': '0px',}} */
 
 const App = () => {
+  console.log('Display size: ', window.innerWidth)
   return(
     <>
       <div className="App" id='page-container'>
         <NavBar />
-        <Row style={{'marginRight': '0px',}}>
-          <Col xs={12} sm={3} md={2} lg={1}>
-            <NavCol />
-          </Col>
-          <Col xs={12} sm={9} md={10} lg={11}>
-            <Main />
-          </Col>
-        </Row>
+          <Row className="justify-content-md-center" style={{'marginRight': '0px',}}>
+            <Col xs={12} sm={12} md={12} lg={10}>
+              <NavCol />
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center" style={{'marginRight': '0px',}}>
+            <Col xs={12} sm={12} md={12} lg={10}>
+              <Main />
+            </Col>
+          </Row>
       </div>
       <Pie />
     </>
