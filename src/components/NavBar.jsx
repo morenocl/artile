@@ -37,10 +37,18 @@ const NavBar = ({ auth, logout }) => {
     </LinkContainer>
   );
 
+  const home = (
+    <LinkContainer to="/">
+      <Button onClick={()=>{}}>
+        <h3>Artile </h3>
+      </Button>
+    </LinkContainer>
+  )
+
   return (
     <Navbar>
-      <Navbar.Brand href='/'>
-        <h1>Artile </h1>
+      <Navbar.Brand>
+        {home}
       </Navbar.Brand>
 
       <Navbar.Collapse className="justify-content-end">
