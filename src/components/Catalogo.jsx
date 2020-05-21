@@ -29,7 +29,7 @@ const Catalogo = (props) => {
   const prod = () => {
     for (var tag in categ){
       const p = categ[tag].elems.find(e => e.id===id);
-      if(p) return(p); else console.log("Si Modal esta renderizado -> el id de producto es invalido.");
+      if(p) return(p)
     }
   };
 
@@ -38,19 +38,19 @@ const Catalogo = (props) => {
       <Col xs={12} md='auto' style={{'padding-right': '2px'}}>
         <Button variant="primary" onClick={() => {setState(init)}}>
           todo</Button>{' '}
-        <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites}); console.log(state)}}>
+        <Button variant="secondary" onClick={() => {setState({...state, aceites:!state.aceites})}}>
           Aceites</Button>{' '}
-        <Button variant="success" onClick={() => {setState({...state, tinturas:!state.tinturas}); console.log(state)}}>
+        <Button variant="success" onClick={() => {setState({...state, tinturas:!state.tinturas})}}>
           Tinturas</Button>{' '}
         <Button variant="dark" onClick={() => {setState({...state, otros:!state.otros})}}>
           otros</Button>{' '}
       </Col>
       <Col xs={12} md='auto' style={{'padding-left': '2px'}}>
-        <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas}); console.log(state)}}>
+        <Button variant="warning" onClick={() => {setState({...state, cremas:!state.cremas})}}>
           Cremas</Button>{' '}
-        <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas}); console.log(state)}}>
+        <Button variant="danger" onClick={() => {setState({...state, canastas:!state.canastas})}}>
           Canastas</Button>{' '}
-        <Button variant="info" onClick={() => {setState({...state, almoha:!state.almoha}); console.log(state)}}>
+        <Button variant="info" onClick={() => {setState({...state, almoha:!state.almoha})}}>
           Almohadillas</Button>{' '}
       </Col>
     </Row>

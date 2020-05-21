@@ -77,7 +77,7 @@ const Producto = (props) => {
         </Container>
       </Modal.Body>
       <Modal.Footer className='modal-footer justify-content-between'>
-        {boton} {toCarrito ? botonCarrito : null} {console.log('boton carrito: '+ toCarrito+ botonCarrito)}
+        {boton} {toCarrito ? botonCarrito : null}
         <Button onClick={agregarACarrito} data-dismiss="modal">Agregar</Button>
       </Modal.Footer>
     </Modal>

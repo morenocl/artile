@@ -13,7 +13,6 @@ import './res/css/style.css'
 /*  style={{'padding-right': '0px',}} */
 
 const App = () => {
-  console.log('Display size: ', window.innerWidth)
   return(
     <>
       <div className="App" id='page-container'>

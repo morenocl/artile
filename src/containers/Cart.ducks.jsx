@@ -61,7 +61,6 @@ const reducer = (state = initialState, action = {}) => {
     }
 
     default:
-      console.log('duck en default.')
       return state;
   }
 }

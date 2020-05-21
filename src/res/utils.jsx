@@ -6,7 +6,7 @@ export const loadState = () => {
     }
     return JSON.parse(serializedData) // Si encontramos con exito nuestro storage lo devolvemos.
   } catch (error) {
-    console.log('Error al leer state de localstorage: ' + error);
+    console.error('Error al leer state de localstorage: ' + error);
     return undefined // Si ocurre algun error, devuelvo undefined para cargar el state inicial.
   }
 }
@@ -16,7 +16,7 @@ export const saveState = (state) => {
     let serializedData = JSON.stringify(state)
     localStorage.setItem('state', serializedData)
   } catch (error) {
-    console.log('Error al escribir state de localstorage: ' + error);
+    console.error('Error al escribir state de localstorage: ' + error);
 	// Acá podemos capturar o crear cualquier log que deseemos en caso de que falle el salvado en el storage.
   }
 }

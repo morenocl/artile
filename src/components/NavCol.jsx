@@ -15,8 +15,8 @@ export const NavCol = () => {
     setWidth(window.innerWidth > 450)
   }
   useEffect(() => {
-      window.addEventListener("resize", updateMedia);
-      return () => window.removeEventListener("resize", updateMedia);
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
   })
 
   const list = [
@@ -49,7 +49,9 @@ export const NavCol = () => {
   const c = (
     list.map((item, i) => {return (
       <Accordion.Collapse eventKey='0'>
-        <LinkContainer xs={4} md={12} to={item.to}><Button block>{item.title}</Button></LinkContainer>
+        <LinkContainer xs={4} md={12} to={item.to}>
+          <Button onClick={()=>{}} block>{item.title}</Button>
+        </LinkContainer>
       </Accordion.Collapse>
     )})
   )
