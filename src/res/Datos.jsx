@@ -4,7 +4,7 @@ export const productos = [
     title:'Textil 1',
     text:'Una descripcion del producto. Esto puede ser detallado o un simple paneo general. Si entra puede ver mas.',
     button:'Agregar',
-    img:['img/img1.png', 'img/img2.png'],
+    img:['public/img/img1.png', 'public/img/img2.png'],
     categ:'textil',
     filtro:'otros',
     precio: '100',

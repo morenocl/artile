@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "babel-loader": "^8.1.0",
     "bootstrap": "^4.4.1",
+    "css-loader": "^3.5.3",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
+    "file-loader": "^6.0.0",
     "holderjs": "^2.9.6",
     "node-fetch": "^2.6.0",
     "path": "^0.12.7",
@@ -23,7 +30,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "svg": "^0.1.0"
+    "style-loader": "^1.2.1",
+    "svg": "^0.1.0",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "start": "node server.js",

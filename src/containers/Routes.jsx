@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, type ContextRouter } from 'react-router'
+import { Route, Switch, ContextRouter } from 'react-router'
 //import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Home />
       </>)}
     />
@@ -30,7 +30,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/catalogo"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Catalogo type="productos"/>
       </>)}
     />
@@ -38,7 +38,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/compra"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Chango />
       </>)}
     />
@@ -46,7 +46,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/configuracion"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Configuracion />
       </>)}
     />
@@ -54,7 +54,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/contacto"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Info type='contacto' />
       </>)}
     />
@@ -62,7 +62,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/envios"
       exact
-      render={(props: ContextRouter) => (<>
+      render={ContextRouter => (<>
         <Info type='envios' />
       </>)}
     />
@@ -70,7 +70,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/nosotros"
       exact
-      render={(props: ContextRouter) => (
+      render={ContextRouter => (
         <Info type='info' />
       )}
     />
@@ -78,7 +78,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/ofertas"
       exact
-      render={(props: ContextRouter) => (
+      render={ContextRouter => (
         <Catalogo type='ofertas' />
       )}
     />
@@ -86,7 +86,7 @@ export const Routes = ({ auth }) => (
     <Route
       path="/politicas"
       exact
-      render={(props: ContextRouter) => (
+      render={ContextRouter => (
         <Info type='politicas' />
       )}
     />
